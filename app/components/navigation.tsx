@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { SignInButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
 export default function Navigation() {
@@ -11,6 +12,7 @@ export default function Navigation() {
             <Link className={`text-gray-600 hover:text-gray-900 py-2 ${pathname.startsWith('/products/1') ? 'font-semibold' : ''}`} href="/products/1">Product 1</Link>
             <Link className={`text-gray-600 hover:text-gray-900 py-2 ${pathname.startsWith('/products/2') ? 'font-semibold' : ''}`} href="/products/2">Product 2</Link>
             <Link className={`text-gray-600 hover:text-gray-900 py-2 ${pathname === '/register' ? 'font-semibold' : ''}`} href="/register">Register</Link>
+            <SignInButton mode="modal"/>
         </nav>
     );
 }
